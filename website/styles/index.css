@@ -1,0 +1,102 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	background-color:#FFFFD3
+}
+.top-banner {
+	display:inherit;
+	line-height: 0.5;
+	text-align:center;
+	border-style: solid;
+	border-color: #006DFF;
+	border-width: 1px;
+    -moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background-color:#FFF;
+}
+.top-banner table {
+	width:100%;
+}
+.top-banner h1 {
+	font-size: 36pt;
+	letter-spacing: 10px;
+	color: #FB0;
+}
+.top-banner h2 {
+	font-size: 16pt;
+	color: #006DFF;
+}
+.top-banner .larger {
+	font-size: 24pt;
+	color: #FB0;
+}
+.top-banner .img-cell {
+	width: 128px;
+}
+.top-banner .txt-cell {
+	text-align:left;
+}
+.top-banner .mac-logo-cell {
+	width: 32px;
+	vertical-align:top
+}
+.top-banner .menu-bar {
+	font-size:12pt;	
+	text-align:left;
+	padding-bottom:5px;
+}
+.top-banner .menu-bar table {
+	width:auto;
+}
+.top-banner .menu-bar a {
+	color:#000;
+	padding-left:4px;
+	padding-right:4px;
+	text-decoration:none;
+	border-style: solid;
+	border-color: #FB0;
+	border-width: 1px;
+    -moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background-color:#FFF;
+}
+.top-banner .menu-bar a:hover {
+	color: #FB0;
+}
+.banner {
+	display:inherit;
+	padding: 5px;
+	border-style: solid;
+	border-color: #006DFF;
+	border-width: 1px;
+    -moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background-color:#FFF;
+}
+.banner table {
+	padding:5px;
+}
+.banner .footer {
+	text-align:center;
+}
+.banner .footer a {
+	color:#000;
+	padding-left:4px;
+	padding-right:4px;
+	text-decoration:none;
+	border-style: solid;
+	border-color: #FB0;
+	border-width: 1px;
+    -moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background-color:#FFF;
+}
+.banner .footer a:hover {
+	color: #FB0;
+}

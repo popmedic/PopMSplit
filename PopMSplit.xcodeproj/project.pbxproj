@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D52B5471555A87D00F7E72D /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D52B5461555A87D00F7E72D /* data.plist */; };
+		3D7C123D154B18A200F31002 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7C123C154B18A200F31002 /* Cocoa.framework */; };
+		3D7C1247154B18A200F31002 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D7C1245154B18A200F31002 /* InfoPlist.strings */; };
+		3D7C1249154B18A200F31002 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7C1248154B18A200F31002 /* main.m */; };
+		3D7C124D154B18A200F31002 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3D7C124B154B18A200F31002 /* Credits.rtf */; };
+		3D7C1250154B18A200F31002 /* POPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7C124F154B18A200F31002 /* POPAppDelegate.m */; };
+		3D7C1253154B18A200F31002 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D7C1251154B18A200F31002 /* MainMenu.xib */; };
+		3D7C125B154B18A300F31002 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7C125A154B18A300F31002 /* SenTestingKit.framework */; };
+		3D7C125C154B18A300F31002 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7C123C154B18A200F31002 /* Cocoa.framework */; };
+		3D7C1264154B18A300F31002 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D7C1262154B18A300F31002 /* InfoPlist.strings */; };
+		3D7C1267154B18A300F31002 /* PopMSplitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7C1266154B18A300F31002 /* PopMSplitTests.m */; };
+		3D7C1271154B193200F31002 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7C1270154B193200F31002 /* QTKit.framework */; };
+		3D7C1273154B2DFD00F31002 /* movies.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7C1272154B2DFD00F31002 /* movies.png */; };
+		3D7C1275154B2E2100F31002 /* split_movies.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7C1274154B2E2100F31002 /* split_movies.png */; };
+		3D7C127C154B31AC00F31002 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7C1276154B31AC00F31002 /* minus.png */; };
+		3D7C127D154B31AC00F31002 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7C1277154B31AC00F31002 /* plus.png */; };
+		3D7C127E154B31AC00F31002 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7C1278154B31AC00F31002 /* back.png */; };
+		3D7C127F154B31AC00F31002 /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7C1279154B31AC00F31002 /* forward.png */; };
+		3D7C1280154B31AC00F31002 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7C127A154B31AC00F31002 /* pause.png */; };
+		3D7C1281154B31AC00F31002 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7C127B154B31AC00F31002 /* stop.png */; };
+		3D7C1283154B320900F31002 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7C1282154B320900F31002 /* play.png */; };
+		3D7C1285154B38B100F31002 /* popmsplit.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7C1284154B38B100F31002 /* popmsplit.png */; };
+		3D7C1287154B3DCC00F31002 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3D7C1286154B3DCC00F31002 /* icon.icns */; };
+		3D7C128E154C625E00F31002 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7C128D154C625E00F31002 /* close.png */; };
+		3D96C27B154CE0AB00A7F271 /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3D96C27A154CE0AB00A7F271 /* ffmpeg */; };
+		3D99D096154F795600567968 /* split.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D99D094154F795600567968 /* split.png */; };
+		3D99D097154F795600567968 /* video.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D99D095154F795600567968 /* video.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3D7C125D154B18A300F31002 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D7C122F154B18A100F31002 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D7C1237154B18A200F31002;
+			remoteInfo = PopMSplit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3D52B5461555A87D00F7E72D /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
+		3D7C1238154B18A200F31002 /* PopMSplit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopMSplit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D7C123C154B18A200F31002 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		3D7C123F154B18A200F31002 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		3D7C1240154B18A200F31002 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3D7C1241154B18A200F31002 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3D7C1244154B18A200F31002 /* PopMSplit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PopMSplit-Info.plist"; sourceTree = "<group>"; };
+		3D7C1246154B18A200F31002 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3D7C1248154B18A200F31002 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3D7C124A154B18A200F31002 /* PopMSplit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PopMSplit-Prefix.pch"; sourceTree = "<group>"; };
+		3D7C124C154B18A200F31002 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		3D7C124E154B18A200F31002 /* POPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = POPAppDelegate.h; sourceTree = "<group>"; };
+		3D7C124F154B18A200F31002 /* POPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = POPAppDelegate.m; sourceTree = "<group>"; };
+		3D7C1252154B18A200F31002 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		3D7C1259154B18A300F31002 /* PopMSplitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopMSplitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D7C125A154B18A300F31002 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		3D7C1261154B18A300F31002 /* PopMSplitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PopMSplitTests-Info.plist"; sourceTree = "<group>"; };
+		3D7C1263154B18A300F31002 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3D7C1265154B18A300F31002 /* PopMSplitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopMSplitTests.h; sourceTree = "<group>"; };
+		3D7C1266154B18A300F31002 /* PopMSplitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopMSplitTests.m; sourceTree = "<group>"; };
+		3D7C1270154B193200F31002 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
+		3D7C1272154B2DFD00F31002 /* movies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movies.png; sourceTree = "<group>"; };
+		3D7C1274154B2E2100F31002 /* split_movies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = split_movies.png; sourceTree = "<group>"; };
+		3D7C1276154B31AC00F31002 /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = "<group>"; };
+		3D7C1277154B31AC00F31002 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		3D7C1278154B31AC00F31002 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		3D7C1279154B31AC00F31002 /* forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward.png; sourceTree = "<group>"; };
+		3D7C127A154B31AC00F31002 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		3D7C127B154B31AC00F31002 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
+		3D7C1282154B320900F31002 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		3D7C1284154B38B100F31002 /* popmsplit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = popmsplit.png; path = ../popmsplit.png; sourceTree = "<group>"; };
+		3D7C1286154B3DCC00F31002 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
+		3D7C128D154C625E00F31002 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = close.png; path = ../../../../../Users/kscardina/Downloads/close.png; sourceTree = "<group>"; };
+		3D96C27A154CE0AB00A7F271 /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg; sourceTree = "<group>"; };
+		3D99D094154F795600567968 /* split.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = split.png; sourceTree = "<group>"; };
+		3D99D095154F795600567968 /* video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3D7C1235154B18A200F31002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D7C1271154B193200F31002 /* QTKit.framework in Frameworks */,
+				3D7C123D154B18A200F31002 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D7C1255154B18A300F31002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D7C125B154B18A300F31002 /* SenTestingKit.framework in Frameworks */,
+				3D7C125C154B18A300F31002 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D7C122D154B18A100F31002 = {
+			isa = PBXGroup;
+			children = (
+				3D7C1270154B193200F31002 /* QTKit.framework */,
+				3D7C1242154B18A200F31002 /* PopMSplit */,
+				3D7C125F154B18A300F31002 /* PopMSplitTests */,
+				3D7C123B154B18A200F31002 /* Frameworks */,
+				3D7C1239154B18A200F31002 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3D7C1239154B18A200F31002 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D7C1238154B18A200F31002 /* PopMSplit.app */,
+				3D7C1259154B18A300F31002 /* PopMSplitTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3D7C123B154B18A200F31002 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D7C123C154B18A200F31002 /* Cocoa.framework */,
+				3D7C125A154B18A300F31002 /* SenTestingKit.framework */,
+				3D7C123E154B18A200F31002 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3D7C123E154B18A200F31002 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D7C123F154B18A200F31002 /* AppKit.framework */,
+				3D7C1240154B18A200F31002 /* CoreData.framework */,
+				3D7C1241154B18A200F31002 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		3D7C1242154B18A200F31002 /* PopMSplit */ = {
+			isa = PBXGroup;
+			children = (
+				3D7C124E154B18A200F31002 /* POPAppDelegate.h */,
+				3D7C124F154B18A200F31002 /* POPAppDelegate.m */,
+				3D7C1251154B18A200F31002 /* MainMenu.xib */,
+				3D7C1243154B18A200F31002 /* Supporting Files */,
+			);
+			path = PopMSplit;
+			sourceTree = "<group>";
+		};
+		3D7C1243154B18A200F31002 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3D96C27A154CE0AB00A7F271 /* ffmpeg */,
+				3D7C128D154C625E00F31002 /* close.png */,
+				3D7C1286154B3DCC00F31002 /* icon.icns */,
+				3D7C1284154B38B100F31002 /* popmsplit.png */,
+				3D7C1282154B320900F31002 /* play.png */,
+				3D7C1276154B31AC00F31002 /* minus.png */,
+				3D7C1277154B31AC00F31002 /* plus.png */,
+				3D7C1278154B31AC00F31002 /* back.png */,
+				3D99D094154F795600567968 /* split.png */,
+				3D99D095154F795600567968 /* video.png */,
+				3D7C1279154B31AC00F31002 /* forward.png */,
+				3D7C127A154B31AC00F31002 /* pause.png */,
+				3D7C127B154B31AC00F31002 /* stop.png */,
+				3D7C1272154B2DFD00F31002 /* movies.png */,
+				3D7C1274154B2E2100F31002 /* split_movies.png */,
+				3D7C1244154B18A200F31002 /* PopMSplit-Info.plist */,
+				3D7C1245154B18A200F31002 /* InfoPlist.strings */,
+				3D7C1248154B18A200F31002 /* main.m */,
+				3D7C124A154B18A200F31002 /* PopMSplit-Prefix.pch */,
+				3D7C124B154B18A200F31002 /* Credits.rtf */,
+				3D52B5461555A87D00F7E72D /* data.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3D7C125F154B18A300F31002 /* PopMSplitTests */ = {
+			isa = PBXGroup;
+			children = (
+				3D7C1265154B18A300F31002 /* PopMSplitTests.h */,
+				3D7C1266154B18A300F31002 /* PopMSplitTests.m */,
+				3D7C1260154B18A300F31002 /* Supporting Files */,
+			);
+			path = PopMSplitTests;
+			sourceTree = "<group>";
+		};
+		3D7C1260154B18A300F31002 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3D7C1261154B18A300F31002 /* PopMSplitTests-Info.plist */,
+				3D7C1262154B18A300F31002 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3D7C1237154B18A200F31002 /* PopMSplit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D7C126A154B18A300F31002 /* Build configuration list for PBXNativeTarget "PopMSplit" */;
+			buildPhases = (
+				3D7C1234154B18A200F31002 /* Sources */,
+				3D7C1235154B18A200F31002 /* Frameworks */,
+				3D7C1236154B18A200F31002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PopMSplit;
+			productName = PopMSplit;
+			productReference = 3D7C1238154B18A200F31002 /* PopMSplit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3D7C1258154B18A300F31002 /* PopMSplitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D7C126D154B18A300F31002 /* Build configuration list for PBXNativeTarget "PopMSplitTests" */;
+			buildPhases = (
+				3D7C1254154B18A300F31002 /* Sources */,
+				3D7C1255154B18A300F31002 /* Frameworks */,
+				3D7C1256154B18A300F31002 /* Resources */,
+				3D7C1257154B18A300F31002 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D7C125E154B18A300F31002 /* PBXTargetDependency */,
+			);
+			name = PopMSplitTests;
+			productName = PopMSplitTests;
+			productReference = 3D7C1259154B18A300F31002 /* PopMSplitTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3D7C122F154B18A100F31002 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = POP;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 3D7C1232154B18A100F31002 /* Build configuration list for PBXProject "PopMSplit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3D7C122D154B18A100F31002;
+			productRefGroup = 3D7C1239154B18A200F31002 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3D7C1237154B18A200F31002 /* PopMSplit */,
+				3D7C1258154B18A300F31002 /* PopMSplitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3D7C1236154B18A200F31002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D7C1247154B18A200F31002 /* InfoPlist.strings in Resources */,
+				3D7C124D154B18A200F31002 /* Credits.rtf in Resources */,
+				3D7C1253154B18A200F31002 /* MainMenu.xib in Resources */,
+				3D7C1273154B2DFD00F31002 /* movies.png in Resources */,
+				3D7C1275154B2E2100F31002 /* split_movies.png in Resources */,
+				3D7C127C154B31AC00F31002 /* minus.png in Resources */,
+				3D7C127D154B31AC00F31002 /* plus.png in Resources */,
+				3D7C127E154B31AC00F31002 /* back.png in Resources */,
+				3D7C127F154B31AC00F31002 /* forward.png in Resources */,
+				3D7C1280154B31AC00F31002 /* pause.png in Resources */,
+				3D7C1281154B31AC00F31002 /* stop.png in Resources */,
+				3D7C1283154B320900F31002 /* play.png in Resources */,
+				3D7C1285154B38B100F31002 /* popmsplit.png in Resources */,
+				3D7C1287154B3DCC00F31002 /* icon.icns in Resources */,
+				3D7C128E154C625E00F31002 /* close.png in Resources */,
+				3D96C27B154CE0AB00A7F271 /* ffmpeg in Resources */,
+				3D99D096154F795600567968 /* split.png in Resources */,
+				3D99D097154F795600567968 /* video.png in Resources */,
+				3D52B5471555A87D00F7E72D /* data.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D7C1256154B18A300F31002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D7C1264154B18A300F31002 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3D7C1257154B18A300F31002 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3D7C1234154B18A200F31002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D7C1249154B18A200F31002 /* main.m in Sources */,
+				3D7C1250154B18A200F31002 /* POPAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D7C1254154B18A300F31002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D7C1267154B18A300F31002 /* PopMSplitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3D7C125E154B18A300F31002 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D7C1237154B18A200F31002 /* PopMSplit */;
+			targetProxy = 3D7C125D154B18A300F31002 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3D7C1245154B18A200F31002 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D7C1246154B18A200F31002 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3D7C124B154B18A200F31002 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D7C124C154B18A200F31002 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		3D7C1251154B18A200F31002 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D7C1252154B18A200F31002 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		3D7C1262154B18A300F31002 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D7C1263154B18A300F31002 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3D7C1268154B18A300F31002 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3D7C1269154B18A300F31002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3D7C126B154B18A300F31002 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PopMSplit/PopMSplit-Prefix.pch";
+				INFOPLIST_FILE = "PopMSplit/PopMSplit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3D7C126C154B18A300F31002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PopMSplit/PopMSplit-Prefix.pch";
+				INFOPLIST_FILE = "PopMSplit/PopMSplit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3D7C126E154B18A300F31002 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PopMSplit.app/Contents/MacOS/PopMSplit";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PopMSplit/PopMSplit-Prefix.pch";
+				INFOPLIST_FILE = "PopMSplitTests/PopMSplitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		3D7C126F154B18A300F31002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PopMSplit.app/Contents/MacOS/PopMSplit";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PopMSplit/PopMSplit-Prefix.pch";
+				INFOPLIST_FILE = "PopMSplitTests/PopMSplitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3D7C1232154B18A100F31002 /* Build configuration list for PBXProject "PopMSplit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D7C1268154B18A300F31002 /* Debug */,
+				3D7C1269154B18A300F31002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D7C126A154B18A300F31002 /* Build configuration list for PBXNativeTarget "PopMSplit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D7C126B154B18A300F31002 /* Debug */,
+				3D7C126C154B18A300F31002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D7C126D154B18A300F31002 /* Build configuration list for PBXNativeTarget "PopMSplitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D7C126E154B18A300F31002 /* Debug */,
+				3D7C126F154B18A300F31002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3D7C122F154B18A100F31002 /* Project object */;
+}
