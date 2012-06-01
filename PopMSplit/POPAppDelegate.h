@@ -22,7 +22,6 @@
     NSString* allSplitInfo;
     NSString* outputDir;
     NSString* outputMask;
-    
 }
 
 @property(retain) QTMovie *movie;
