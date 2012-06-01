@@ -73,13 +73,6 @@
 - (IBAction)outputDirectoryRBChange:(id)sender;
 - (IBAction)helpClick:(id)sender;
 
-- (void)refreshSplitInfo:(NSPipe*)pipe;
-- (void)startSplitInfoThread:(NSPipe*)pipe;
-- (void)refreshSlider:(NSTimer*)theTimer;
-- (void)startSliderTimer;
-- (void)stopSliderTimer;
-- (void)taskExited:(NSNotification*)note;
-
 - (int)numberOfRowsInTableView:(NSTableView *)aTableView;
 - (id)tableView:(NSTableView*)aTableView 
     objectValueForTableColumn:(NSTableColumn*)aTableColumn 
