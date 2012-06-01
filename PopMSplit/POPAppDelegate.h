@@ -3,7 +3,7 @@
 //  PopMSplit
 //
 //  Created by Kevin Scardina on 4/27/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 __PopMedic__. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
@@ -14,14 +14,15 @@
     NSMutableArray *splitDS;
     NSURL* url;
     bool splitting;
-    //NSPipe *ffmpegpipe;
-    NSTask *ffmpeg;
     NSMutableArray *tasks;
+    NSMutableArray *taskLens;
     int tasksIdx;
-    NSMutableArray *tPipes;
     NSString* allSplitInfo;
     NSString* outputDir;
     NSString* outputMask;
+    float totalLength;
+    float runningLength;
+    float oldRunLength;
 }
 
 @property(retain) QTMovie *movie;
@@ -75,13 +76,6 @@
 - (IBAction)outputDirectoryRBChange:(id)sender;
 - (IBAction)helpClick:(id)sender;
 
-- (void)refreshSplitInfo:(NSPipe*)pipe;
-- (void)startSplitInfoThread:(NSPipe*)pipe;
-- (void)refreshSlider:(NSTimer*)theTimer;
-- (void)startSliderTimer;
-- (void)stopSliderTimer;
-- (void)taskExited:(NSNotification*)note;
-
 - (int)numberOfRowsInTableView:(NSTableView *)aTableView;
 - (id)tableView:(NSTableView*)aTableView 
     objectValueForTableColumn:(NSTableColumn*)aTableColumn 
@@ -91,4 +85,5 @@
    forTableColumn:(NSTableColumn *)aTableColumn 
               row:(NSInteger)rowIndex;
 
+//-(float)secsFromTimeStr:(NSString*)str;
 @end

@@ -12,7 +12,6 @@
 		3D7C1247154B18A200F31002 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D7C1245154B18A200F31002 /* InfoPlist.strings */; };
 		3D7C1249154B18A200F31002 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7C1248154B18A200F31002 /* main.m */; };
 		3D7C124D154B18A200F31002 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3D7C124B154B18A200F31002 /* Credits.rtf */; };
-		3D7C1250154B18A200F31002 /* POPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7C124F154B18A200F31002 /* POPAppDelegate.m */; };
 		3D7C1253154B18A200F31002 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D7C1251154B18A200F31002 /* MainMenu.xib */; };
 		3D7C125B154B18A300F31002 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7C125A154B18A300F31002 /* SenTestingKit.framework */; };
 		3D7C125C154B18A300F31002 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D7C123C154B18A200F31002 /* Cocoa.framework */; };
@@ -34,6 +33,7 @@
 		3D96C27B154CE0AB00A7F271 /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3D96C27A154CE0AB00A7F271 /* ffmpeg */; };
 		3D99D096154F795600567968 /* split.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D99D094154F795600567968 /* split.png */; };
 		3D99D097154F795600567968 /* video.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D99D095154F795600567968 /* video.png */; };
+		3D9F8B7A1579298D00838D9E /* POPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9F8B791579298D00838D9E /* POPAppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +59,6 @@
 		3D7C124A154B18A200F31002 /* PopMSplit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PopMSplit-Prefix.pch"; sourceTree = "<group>"; };
 		3D7C124C154B18A200F31002 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		3D7C124E154B18A200F31002 /* POPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = POPAppDelegate.h; sourceTree = "<group>"; };
-		3D7C124F154B18A200F31002 /* POPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = POPAppDelegate.m; sourceTree = "<group>"; };
 		3D7C1252154B18A200F31002 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		3D7C1259154B18A300F31002 /* PopMSplitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopMSplitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D7C125A154B18A300F31002 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -83,6 +82,7 @@
 		3D96C27A154CE0AB00A7F271 /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg; sourceTree = "<group>"; };
 		3D99D094154F795600567968 /* split.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = split.png; sourceTree = "<group>"; };
 		3D99D095154F795600567968 /* video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video.png; sourceTree = "<group>"; };
+		3D9F8B791579298D00838D9E /* POPAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POPAppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,9 +150,9 @@
 		3D7C1242154B18A200F31002 /* PopMSplit */ = {
 			isa = PBXGroup;
 			children = (
-				3D7C124E154B18A200F31002 /* POPAppDelegate.h */,
-				3D7C124F154B18A200F31002 /* POPAppDelegate.m */,
+				3D9F8B791579298D00838D9E /* POPAppDelegate.m */,
 				3D7C1251154B18A200F31002 /* MainMenu.xib */,
+				3D7C124E154B18A200F31002 /* POPAppDelegate.h */,
 				3D7C1243154B18A200F31002 /* Supporting Files */,
 			);
 			path = PopMSplit;
@@ -330,7 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D7C1249154B18A200F31002 /* main.m in Sources */,
-				3D7C1250154B18A200F31002 /* POPAppDelegate.m in Sources */,
+				3D9F8B7A1579298D00838D9E /* POPAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
