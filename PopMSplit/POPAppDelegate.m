@@ -3,7 +3,7 @@
 //  PopMSplit
 //
 //  Created by Kevin Scardina on 4/27/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 __PopMedic__. All rights reserved.
 //
 
 #import "POPAppDelegate.h"
@@ -47,7 +47,6 @@
     [self setRate:0.0];
     [self setSlideTimer:nil];
     splitDS = nil;
-    tPipes = nil;
     splitting = false;
     [[self splitOutput] setEditable:NO];
     [[self splitOutput] setContinuousSpellCheckingEnabled:NO];
@@ -217,12 +216,10 @@
         QTTime qtt = QTMakeTime((long)(long)[[self seekSlider] floatValue], [[self movie] currentTime].timeScale);
         [[self movie] setCurrentTime:qtt];
         [[self infoLabel] setStringValue:[NSString stringWithFormat:@"Rate: %.0fx; At: %@; Of: %@", [self rate], QTStringFromTime([[self movie] currentTime]), QTStringFromTime([[self movie] duration])]];
-        //NSLog([NSString stringWithFormat:@"\nat: %f", [[self seekSlider] floatValue]]);
     }
 }
 
 - (IBAction)about:(id)sender {
-    //NSRunAlertPanel(@"About Pop Movie Splitter", @"Pop Movie Splitter\nBy: PopMedic\nhttp://popmedic.com\nC. 2012\nGPL", @"OK", nil, nil);
     [NSApp beginSheet: [self aboutWnd] modalForWindow: [self window] modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
 }
 
@@ -301,7 +298,6 @@
 
 - (IBAction)splitStartStop:(id)sender {
     NSTask* task = nil;
-    NSPipe* ip = nil;
 
     if(splitting)
     {
@@ -317,15 +313,11 @@
     else 
     {
         tasks = [[NSMutableArray alloc] init];
-        tPipes = [[NSMutableArray alloc] init];
-        tasksIdx = 0;
-        //ffmpegpipe = [[NSPipe pipe] copy];        
+        tasksIdx = 0;       
         for(int i = 0; i < [splitDS count]; i++)
         {
             NSString* fn = (NSString*)[[splitDS objectAtIndex:i] objectAtIndex:2];
             task = [[NSTask alloc] init];
-            ip = [[NSPipe alloc] init];
-            //[task setLaunchPath:@"/usr/local/bin/ffmpeg"];
             [task setLaunchPath:[[NSBundle mainBundle] pathForResource:@"ffmpeg" ofType:nil]];
             NSMutableArray* tmpma = [NSMutableArray arrayWithObjects:  
                                      @"-ss", (NSString*)[[splitDS objectAtIndex:i] objectAtIndex:0], 
@@ -368,65 +360,56 @@
                 }
                 [tmpma addObject:fn];
             }
-                                  /*@"-vcodec", @"copy", 
-                                  @"-acodec", @"copy", @"-y", 
-                                  (NSString*)[[splitDS objectAtIndex:i] objectAtIndex:2], nil]]; */
-            [task setStandardOutput:ip];
-            [task setStandardError:ip];
-            //[task setStandardInput:ffmpegpipe];
+            
+            [task setStandardOutput:[NSPipe pipe]];
+            [task setStandardError:[task standardOutput]];
             [task setArguments:tmpma];
             if ([[NSFileManager defaultManager] fileExistsAtPath:fn])
             {
                 if(NSRunAlertPanel(@"File Exists", [NSString stringWithFormat:@"File %@ exists.", fn], @"Replace", @"Skip", nil) == NSAlertDefaultReturn)
                 {
                     [tasks addObject:task];
-                    [tPipes addObject:ip];
                 }
             }
             else
             {
                 [tasks addObject:task];
-                [tPipes addObject:ip];
             }
             task = nil;
-            ip = nil;
         }
         if([tasks count] > 0)
         {
+            allSplitInfo = @"";
             [[self splitProgIndicator] startAnimation:sender];
             splitting = true;
-            [self startSplitInfoThread:[tPipes objectAtIndex:tasksIdx]];
             [[self splitStartStopBtn] setImage:[NSImage imageNamed:@"stop"]];
-            //[[self splitStartStopBtn] setEnabled:NO];
             [[self closeSplitBtn] setEnabled:NO];
             
             task = (NSTask*)[tasks objectAtIndex:tasksIdx];
             
             [[NSNotificationCenter defaultCenter]
-                addObserver:self 
-                    selector:@selector(taskExited:) 
-                        name:NSTaskDidTerminateNotification 
-                      object:task];
-            //[[self splitOutput] setStringValue:[[[self splitOutput] stringValue] stringByAppendingString:[NSString stringWithFormat:@"Running task %@...", [[task arguments] componentsJoinedByString:@" "]]]];
+                 addObserver:self 
+                    selector:@selector(taskReadStdOut:) 
+                        name:NSFileHandleReadCompletionNotification 
+                      object:[[task standardOutput] fileHandleForReading]
+             ];
+            [[[task standardOutput] fileHandleForReading] readInBackgroundAndNotify];
+            
             [[self splitOutput] setString:[NSString stringWithFormat:@"Running task %@...\n", [[task arguments] componentsJoinedByString:@" "]]];
             [task launch];
-           // NSData* data = [[[self cmdIO] fileHandleForReading] readDataToEndOfFile];
-           // NSLog([[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
         }
     }
 }
 
-- (void)taskExited:(NSNotification*)note
+- (void)taskExited
 {
     NSTask* task = (NSTask*)[tasks objectAtIndex:tasksIdx];
     [[NSNotificationCenter defaultCenter]
      removeObserver:self
-     name:NSTaskDidTerminateNotification 
-     object:task];
+     name:NSFileHandleReadCompletionNotification 
+     object:[[task standardOutput] fileHandleForReading]];
     [[self splitInfoThread] cancel];
     
-    //[[self splitOutput] setStringValue:[[[self splitOutput] stringValue] stringByAppendingString:[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]]];
-    //[[self splitOutput] setStringValue:[[[self splitOutput] stringValue] stringByAppendingString:[NSString stringWithFormat:@"Task %@ complete.\n", [[task arguments] componentsJoinedByString:@" "]]]];
     if(splitting)
     {
         [[self splitOutput] setString:[[[self splitOutput] string] stringByAppendingString:allSplitInfo]];
@@ -450,28 +433,61 @@
         task = (NSTask*)[tasks objectAtIndex:tasksIdx];
         [[NSNotificationCenter defaultCenter]
          addObserver:self 
-         selector:@selector(taskExited:) 
-         name:NSTaskDidTerminateNotification 
-         object:task];
-        //[[self splitOutput] setStringValue:[[[self splitOutput] stringValue] stringByAppendingString:[NSString stringWithFormat:@"Running task %@...", [[task arguments] componentsJoinedByString:@" "]]]];
+         selector:@selector(taskReadStdOut:) 
+         name:NSFileHandleReadCompletionNotification 
+         object:[[task standardOutput] fileHandleForReading]
+         ];
+        [[[task standardOutput] fileHandleForReading] readInBackgroundAndNotify];
+        
         [[self splitOutput] setString:[[[self splitOutput] string] stringByAppendingString:[NSString stringWithFormat:@"Running task %@...\n", [[task arguments] componentsJoinedByString:@" "]]]];
-        [self startSplitInfoThread:(NSPipe*)[tPipes objectAtIndex:tasksIdx]];
+        
         [task launch];
     }
     else
     {
         [tasks removeAllObjects];
-        [tPipes removeAllObjects];
         tasks = nil;
-        tPipes = nil;
         [[self splitProgIndicator] stopAnimation:nil];
         splitting = false;
         [[self splitInfo] setStringValue:@""];
         [[self splitStartStopBtn] setImage:[NSImage imageNamed:@"play"]];
-        //[[self splitStartStopBtn] setEnabled:YES];
         [[self closeSplitBtn] setEnabled:YES];
     }
     
+}
+
+-(void) taskReadStdOut:(NSNotification*)noti
+{
+    NSData* data = [[noti userInfo] objectForKey:NSFileHandleNotificationDataItem];
+    if([data length])
+    {
+        NSString* sd = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        allSplitInfo = [allSplitInfo stringByAppendingString:sd];
+        sd = nil;
+        
+        allSplitInfo = [allSplitInfo stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        
+        NSString* s = @"";
+        if ([allSplitInfo rangeOfString:@"\n" options:NSBackwardsSearch].location != NSNotFound) {
+            s = [[allSplitInfo substringFromIndex:[allSplitInfo rangeOfString:@"\n" options:NSBackwardsSearch].location+1] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"\n"]];
+        }
+        if([s rangeOfString:@"frame=" options:NSBackwardsSearch].location != NSNotFound)
+        {
+            s = [s substringFromIndex:[s rangeOfString:@"frame=" options:NSBackwardsSearch].location];
+        }
+        if(s != nil && s != @"")
+        {
+            if([s length] > 100)
+            {
+                s = [s substringFromIndex:[s length] - 99];
+            }
+            [[self splitInfo] setStringValue:s];
+        }
+    }
+    else {
+        [self taskExited];
+    }
+    [[noti object] readInBackgroundAndNotify];
 }
 
 - (IBAction)aboutCloseBtnClick:(id)sender {
@@ -543,49 +559,6 @@ NSInteger qttsSort(id qtts1, id qtts2, void *context)
     else if (f1>f2) return NSOrderedDescending;
     else return NSOrderedSame;
 }
-
-- (void)refreshSplitInfo:(NSPipe*)pipe
-{
-    NSFileHandle* fh = [pipe fileHandleForReading];
-    allSplitInfo = @"";
-    //allSplitInfo = [[self splitOutput] string];
-    NSData *data;
-    while ((data = [fh availableData]) != nil && [[self splitInfoThread] isCancelled] == false)
-    {
-        NSString* sd = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        allSplitInfo = [allSplitInfo stringByAppendingString:sd];
-        sd = nil;
-        //[[self splitOutput] setString:allSplitInfo];
-        //[[self splitOutput] scrollToEndOfDocument:self];
-        
-        allSplitInfo = [allSplitInfo stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        
-        NSString* s = @"";
-        if ([allSplitInfo rangeOfString:@"\n" options:NSBackwardsSearch].location != NSNotFound) {
-            s = [[allSplitInfo substringFromIndex:[allSplitInfo rangeOfString:@"\n" options:NSBackwardsSearch].location+1] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"\n"]];
-        }
-        if([s rangeOfString:@"frame=" options:NSBackwardsSearch].location != NSNotFound)
-        {
-            s = [s substringFromIndex:[s rangeOfString:@"frame=" options:NSBackwardsSearch].location];
-        }
-        if(s != nil && s != @"")
-        {
-            if([s length] > 100)
-            {
-                s = [s substringFromIndex:[s length] - 99];
-            }
-            [[self splitInfo] setStringValue:s];
-        }
-        [fh waitForDataInBackgroundAndNotify];
-    }
-}
-
-- (void)startSplitInfoThread:(NSPipe*)pipe
-{
-    [self setSplitInfoThread:[[NSThread alloc] initWithTarget:self selector:@selector(refreshSplitInfo:) object:pipe]];
-    [[self splitInfoThread] start];
-}
-
 - (void)refreshSlider:(NSTimer*)theTimer
 {
     [[self seekSlider] setFloatValue:(float)[[self movie] currentTime].timeValue];
