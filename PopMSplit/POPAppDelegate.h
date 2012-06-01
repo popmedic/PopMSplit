@@ -14,11 +14,8 @@
     NSMutableArray *splitDS;
     NSURL* url;
     bool splitting;
-    //NSPipe *ffmpegpipe;
-    NSTask *ffmpeg;
     NSMutableArray *tasks;
     int tasksIdx;
-    NSMutableArray *tPipes;
     NSString* allSplitInfo;
     NSString* outputDir;
     NSString* outputMask;
