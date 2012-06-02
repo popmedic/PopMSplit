@@ -135,11 +135,11 @@
 }
 
 - (IBAction)play:(id)sender {
-    while ([self movie] == nil)
+    if ([self movie] == nil)
     {
         [self selectSource:sender];
     }
-    if([self playing])
+    else if([self playing])
     {
         [[self movie] stop];
         [self setPlaying:NO];
