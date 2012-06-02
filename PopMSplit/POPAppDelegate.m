@@ -349,25 +349,26 @@
                     //[tmpma addObject:@"-acodec"];
                     //[tmpma addObject:@"copy"];
                 }
-                [tmpma addObject:fn];
             }
             if ([[self audioCB] state] == NSOnState && [[self videoCB] state] == NSOffState) {
                 [tmpma addObject:@"-vn"];
-                fn = [[fn stringByDeletingPathExtension] stringByAppendingPathExtension:@"mp3"];
-                [tmpma addObject: fn];
-            }
+                [tmpma addObject:@"-ac"];
+                [tmpma addObject:@"2"];
+                fn = [[fn stringByDeletingPathExtension] stringByAppendingPathExtension:@"mp3"];            }
             if ([[self videoCB] state] == NSOnState && [[self audioCB] state] == NSOffState) {
                 if([[self convertCB] state] == NSOnState) {
                     [tmpma addObject:@"-same_quant"];
                     fn = [[fn stringByDeletingPathExtension] stringByAppendingPathExtension:[[[self convertToBtn] selectedItem] title]];
                 }
                 else {
-                    [tmpma addObject:@"-an"];
                     [tmpma addObject:@"-vcodec"];
                     [tmpma addObject:@"copy"];
                 }
-                [tmpma addObject:fn];
+                [tmpma addObject:@"-an"];
             }
+            [tmpma addObject:@"-threads"];
+            [tmpma addObject:@"0"];
+            [tmpma addObject:fn];
             
             [task setStandardOutput:[NSPipe pipe]];
             [task setStandardError:[task standardOutput]];
