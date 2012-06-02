@@ -333,6 +333,8 @@
             if ([[self audioCB] state] == NSOnState && [[self videoCB] state] == NSOnState) {
                 if([[self convertCB] state] == NSOnState) {
                     [tmpma addObject:@"-same_quant"];
+                    [tmpma addObject:@"-ac"];
+                    [tmpma addObject:@"2"];
                     NSString* c2 = [[[self convertToBtn] selectedItem] title];
                     if([c2 compare:@"flv" options:NSCaseInsensitiveSearch] == NSOrderedSame)
                     {
